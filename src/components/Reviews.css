@@ -1,0 +1,284 @@
+.photography-reviews {
+  --reviews-ink: #382e29;
+  --reviews-muted: #786a61;
+  --reviews-accent: #b66f53;
+  --reviews-paper: #f8f3ee;
+
+  padding: clamp(5rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5rem);
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(224, 200, 184, 0.25), transparent 48%),
+    var(--reviews-paper);
+  color: var(--reviews-ink);
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+}
+
+.photography-reviews *,
+.photography-reviews *::before,
+.photography-reviews *::after {
+  box-sizing: border-box;
+}
+
+.photography-reviews__inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.photography-reviews__intro {
+  max-width: 760px;
+  margin: 0 auto 3.25rem;
+  text-align: center;
+}
+
+.photography-reviews__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  margin: 0 0 1rem;
+  color: var(--reviews-accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.photography-reviews__eyebrow span {
+  width: 28px;
+  height: 1px;
+  background: #d7b5a5;
+}
+
+.photography-reviews__intro h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  font-size: clamp(3.2rem, 6vw, 5rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+.photography-reviews__intro h2 em {
+  color: var(--reviews-accent);
+  font-weight: 400;
+}
+
+.photography-reviews__description {
+  max-width: 540px;
+  margin: 1.25rem auto 0;
+  color: var(--reviews-muted);
+  font-size: 0.94rem;
+  line-height: 1.8;
+}
+
+.photography-reviews__sample-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #e4cdbd;
+  border-radius: 999px;
+  background: rgba(255, 253, 250, 0.75);
+  color: #765b4c;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.photography-reviews__sample-note::before {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--reviews-accent);
+  content: "";
+}
+
+.photography-reviews__viewport {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+  padding: 0.25rem 0 1.1rem;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 4%,
+    #000 96%,
+    transparent
+  );
+}
+
+.photography-reviews__track,
+.photography-reviews__group {
+  display: flex;
+  width: max-content;
+}
+
+.photography-reviews__track {
+  animation: reviews-marquee-right 75s linear infinite;
+  will-change: transform;
+}
+
+.photography-reviews__viewport:hover .photography-reviews__track,
+.photography-reviews__viewport:focus-within .photography-reviews__track {
+  animation-play-state: paused;
+}
+
+.photography-reviews__group {
+  flex: 0 0 auto;
+  align-items: stretch;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.photography-reviews__card {
+  position: relative;
+  display: flex;
+  width: 360px;
+  min-height: 284px;
+  flex-direction: column;
+  padding: 1.55rem 1.6rem 1.35rem;
+  overflow: hidden;
+  border: 1px solid #eadbd1;
+  border-radius: 18px;
+  background: rgba(255, 253, 250, 0.88);
+  box-shadow: 0 12px 32px rgba(65, 46, 35, 0.06);
+  transition:
+    border-color 300ms ease,
+    box-shadow 300ms ease,
+    transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.photography-reviews__card:hover {
+  border-color: #d9b9a7;
+  box-shadow: 0 18px 36px rgba(65, 46, 35, 0.1);
+}
+
+.photography-reviews__rating {
+  display: flex;
+  gap: 0.2rem;
+  margin-bottom: 0.85rem;
+  color: #d99a57;
+  font-size: 0.93rem;
+  letter-spacing: 0.04em;
+}
+
+.photography-reviews__sample-label {
+  position: relative;
+  margin: 0 0 0.5rem;
+  color: var(--reviews-accent);
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.photography-reviews__card blockquote {
+  position: relative;
+  flex: 1;
+  margin: 0 0 1rem;
+  color: #5f5149;
+  font-family: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  font-size: 1.18rem;
+  line-height: 1.45;
+}
+
+.photography-reviews__author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: auto;
+  padding-top: 1.1rem;
+  border-top: 1px solid #eee2da;
+}
+
+.photography-reviews__avatar {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #e5cfc1;
+  border-radius: 50%;
+  background: #f7eae1;
+  color: var(--reviews-accent);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.25rem;
+}
+
+.photography-reviews__author > span:last-child {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.photography-reviews__name {
+  color: var(--reviews-ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.photography-reviews__session {
+  color: var(--reviews-muted);
+  font-size: 0.7rem;
+}
+
+@keyframes reviews-marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .photography-reviews__track {
+    animation-duration: 68s;
+  }
+}
+
+@media (max-width: 600px) {
+  .photography-reviews {
+    padding: 4.75rem 1.15rem 5.25rem;
+  }
+
+  .photography-reviews__intro {
+    margin-bottom: 2.25rem;
+  }
+
+  .photography-reviews__intro h2 {
+    font-size: clamp(3rem, 13vw, 4.2rem);
+  }
+
+  .photography-reviews__sample-note {
+    max-width: 100%;
+    border-radius: 14px;
+    text-align: left;
+  }
+
+  .photography-reviews__group {
+    gap: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .photography-reviews__card {
+    width: min(310px, calc(100vw - 3rem));
+    min-height: 260px;
+    padding: 1.4rem 1.3rem 1.2rem;
+  }
+
+  .photography-reviews__track {
+    animation-duration: 55s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photography-reviews__track {
+    animation: none;
+    transform: none;
+  }
+
+  .photography-reviews__card {
+    transition-duration: 0.01ms !important;
+  }
+}

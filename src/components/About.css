@@ -1,0 +1,230 @@
+.photographer-about {
+  --about-ink: #49382f;
+  --about-muted: #705d53;
+  --about-accent: #a9634b;
+  --about-paper: #f7efe8;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 7vw, 7rem);
+  background-color: var(--about-paper);
+  background-image:
+    repeating-conic-gradient(
+      from 0deg at 0% 0%,
+      #efdccf 0deg,
+      #fff8f2 5deg
+    ),
+    repeating-conic-gradient(
+      from 0deg at 100% 100%,
+      #fff8f2 0deg,
+      #efdccf 5deg
+    );
+  background-size: 64px 64px;
+  background-blend-mode: multiply;
+  color: var(--about-ink);
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+}
+
+.photographer-about *,
+.photographer-about *::before,
+.photographer-about *::after {
+  box-sizing: border-box;
+}
+
+.photographer-about__inner {
+  display: grid;
+  position: relative;
+  z-index: 1;
+  width: min(1280px, 100%);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 5.5rem);
+  margin: 0 auto;
+}
+
+.photographer-about__portrait-wrap {
+  position: relative;
+  width: min(100%, 500px);
+  justify-self: end;
+  transform: translateY(-0.75rem);
+  padding: 0 1.35rem 1.35rem 0;
+}
+
+.photographer-about__portrait-wrap::before {
+  position: absolute;
+  z-index: 0;
+  inset: 1.35rem 0 0 1.35rem;
+  border: 1px solid rgba(126, 84, 65, 0.45);
+  content: "";
+}
+
+.photographer-about__portrait {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 0.76;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.photographer-about__portrait-note {
+  position: absolute;
+  z-index: 2;
+  right: -1.05rem;
+  bottom: 2.1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 250, 245, 0.96);
+  color: var(--about-accent);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.photographer-about__copy {
+  width: 100%;
+  max-width: 680px;
+  padding: clamp(1.6rem, 4vw, 3rem);
+  border: 1px solid rgba(126, 84, 65, 0.16);
+  background: rgba(255, 250, 245, 0.78);
+  box-shadow: 0 18px 55px rgba(83, 55, 41, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.photographer-about__eyebrow {
+  margin: 0 0 1.35rem;
+  color: var(--about-accent);
+  font-size: 0.71rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.photographer-about__copy h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  font-size: clamp(3.2rem, 5.4vw, 5rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.photographer-about__copy h2 em {
+  color: var(--about-accent);
+  font-weight: 400;
+}
+
+.photographer-about__flourish {
+  display: flex;
+  width: 145px;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 1.5rem 0;
+  color: #d99a7e;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.1rem;
+}
+
+.photographer-about__flourish span:first-child,
+.photographer-about__flourish span:last-child {
+  height: 1px;
+  flex: 1;
+  background: rgba(169, 99, 75, 0.45);
+}
+
+.photographer-about__copy > p:not(.photographer-about__eyebrow) {
+  margin: 0 0 1rem;
+  color: var(--about-muted);
+  font-size: 0.94rem;
+  line-height: 1.9;
+}
+
+.photographer-about__details {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1.5rem 0 0.8rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(126, 84, 65, 0.2);
+}
+
+.photographer-about__detail {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.photographer-about__detail span {
+  color: var(--about-accent);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.photographer-about__detail p {
+  margin: 0;
+  color: var(--about-ink);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.photographer-about__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.65rem;
+  padding: 0.45rem 0 0.55rem;
+  border-bottom: 1px solid #c78b70;
+  color: var(--about-ink);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 180ms ease, gap 180ms ease;
+}
+
+.photographer-about__link:hover {
+  gap: 1rem;
+  color: var(--about-accent);
+}
+
+.photographer-about__link span {
+  color: var(--about-accent);
+}
+
+@media (max-width: 760px) {
+  .photographer-about {
+    padding: 4.5rem 1.35rem 5rem;
+  }
+
+  .photographer-about__inner {
+    max-width: 560px;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .photographer-about__portrait-wrap {
+    width: min(82%, 390px);
+    justify-self: start;
+    margin-left: 0.4rem;
+    transform: none;
+  }
+
+  .photographer-about__copy {
+    max-width: none;
+    padding: 0;
+  }
+
+  .photographer-about__copy h2 {
+    font-size: clamp(3.3rem, 11vw, 4.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photographer-about *,
+  .photographer-about *::before,
+  .photographer-about *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,140 @@
+.photography-header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  align-items: center;
+  min-height: 96px;
+  padding: 0 clamp(1.25rem, 5vw, 5rem);
+  border-bottom: 1px solid rgba(223, 201, 188, 0.55);
+  background: rgba(255, 253, 250, 0.97);
+  box-shadow: 0 5px 20px rgba(59, 43, 34, 0.035);
+  backdrop-filter: blur(12px);
+}
+
+.photography-header,
+.photography-header * {
+  box-sizing: border-box;
+}
+
+.photography-header__brand {
+  display: inline-flex;
+  width: 120px;
+  height: 92px;
+  align-items: center;
+  justify-self: start;
+}
+
+.photography-header__brand img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.photography-header__navigation {
+  display: flex;
+  width: min(100%, 940px);
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.photography-header__navigation a {
+  position: relative;
+  padding: 0.7rem 0 0.8rem;
+  color: #332b27;
+  font-size: 0.94rem;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  text-decoration: none;
+  transition: color 220ms ease;
+}
+
+.photography-header__navigation a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0.36rem;
+  left: 0;
+  height: 1px;
+  background: #b66f53;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 260ms ease;
+}
+
+.photography-header__navigation a:hover,
+.photography-header__navigation a:focus-visible,
+.photography-header__navigation a.is-current {
+  color: #b66f53;
+}
+
+.photography-header__navigation a:hover::after,
+.photography-header__navigation a:focus-visible::after,
+.photography-header__navigation a.is-current::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 1000px) {
+  .photography-header {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "brand"
+      "navigation";
+    min-height: 112px;
+    padding: 0.35rem clamp(1.25rem, 4vw, 2.5rem) 0;
+  }
+
+  .photography-header__brand {
+    grid-area: brand;
+    width: 106px;
+    height: 72px;
+  }
+
+  .photography-header__navigation {
+    grid-area: navigation;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1.4rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .photography-header__navigation::-webkit-scrollbar {
+    display: none;
+  }
+
+  .photography-header__navigation a {
+    flex: 0 0 auto;
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .photography-header {
+    min-height: 106px;
+    padding: 0.25rem 1rem 0;
+  }
+
+  .photography-header__brand {
+    width: 96px;
+    height: 64px;
+  }
+
+  .photography-header__navigation {
+    gap: 1.25rem;
+  }
+
+  .photography-header__navigation a {
+    font-size: 0.76rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photography-header,
+  .photography-header * {
+    transition-duration: 0.01ms !important;
+  }
+}

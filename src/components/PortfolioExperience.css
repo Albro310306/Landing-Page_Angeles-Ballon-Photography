@@ -1,0 +1,275 @@
+.portfolio-experience__intro {
+  margin-bottom: 2.5rem;
+}
+
+.photography-portfolio .portfolio-experience__eyebrow {
+  color: var(--portfolio-accent);
+}
+
+.photography-portfolio .portfolio-experience__intro h2 {
+  color: var(--portfolio-ink);
+}
+
+.photography-portfolio .portfolio-experience__intro h2 em {
+  color: var(--portfolio-accent);
+}
+
+.photography-portfolio .portfolio-experience__description {
+  color: var(--portfolio-muted);
+}
+
+.portfolio-experience__console {
+  padding: clamp(1rem, 2.5vw, 2rem);
+  overflow: hidden;
+  border: 1px solid rgba(255, 250, 245, 0.16);
+  border-radius: 22px;
+  background: rgba(31, 26, 24, 0.68);
+  box-shadow: 0 25px 75px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(14px);
+}
+
+.portfolio-experience__console-top,
+.portfolio-experience__selection,
+.portfolio-experience__console-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.portfolio-experience__console-top {
+  padding: 0 0.2rem 1rem;
+  border-bottom: 1px solid rgba(255, 250, 245, 0.14);
+}
+
+.portfolio-experience__brand,
+.portfolio-experience__collection {
+  color: var(--portfolio-muted);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.portfolio-experience__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--portfolio-ink);
+}
+
+.portfolio-experience__brand span {
+  color: var(--portfolio-accent);
+  font-size: 1rem;
+}
+
+.portfolio-experience__collection span {
+  padding: 0 0.3rem;
+  color: var(--portfolio-accent);
+}
+
+.portfolio-experience__selection {
+  padding: 1rem 0.2rem 0;
+}
+
+.portfolio-experience__selection-copy {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.portfolio-experience__selection-copy span,
+.portfolio-experience__console-bottom > span:first-child {
+  color: var(--portfolio-muted);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.portfolio-experience__selection-copy strong {
+  color: var(--portfolio-ink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.portfolio-experience__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.photography-portfolio .portfolio-experience__filter {
+  min-height: 32px;
+  padding: 0.4rem 0.75rem;
+  border-color: rgba(255, 250, 245, 0.17);
+  background: rgba(255, 250, 245, 0.04);
+  color: var(--portfolio-muted);
+  font-size: 0.59rem;
+}
+
+.photography-portfolio .portfolio-experience__filter:hover,
+.photography-portfolio .portfolio-experience__filter.is-active {
+  border-color: var(--portfolio-accent);
+  background: rgba(227, 180, 156, 0.13);
+  color: var(--portfolio-ink);
+}
+
+.photography-portfolio .portfolio-experience__filter.is-active {
+  box-shadow: inset 0 -2px var(--portfolio-accent);
+}
+
+.portfolio-experience__carousel {
+  margin: 0.3rem 0 0;
+}
+
+.portfolio-experience .photography-portfolio__grid {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.portfolio-experience__card {
+  flex: 0 0 calc((100% - 2.9rem) / 3);
+  min-width: 0;
+  transition: transform 250ms ease;
+}
+
+.portfolio-experience__card.is-selected {
+  transform: translateY(-5px);
+}
+
+.portfolio-experience .photography-portfolio__card-wrap {
+  height: 100%;
+}
+
+.portfolio-experience .photography-portfolio__image-wrap {
+  min-height: 380px;
+  aspect-ratio: 0.84;
+}
+
+.portfolio-experience .photography-portfolio__card-wrap.is-pointer-active .photography-portfolio__card,
+.portfolio-experience .photography-portfolio__card-wrap:focus-within .photography-portfolio__card {
+  box-shadow: none;
+}
+
+.portfolio-experience .photography-portfolio__category-select {
+  border-radius: 0;
+}
+
+.portfolio-experience .photography-portfolio__carousel-button {
+  border-color: rgba(255, 250, 245, 0.2);
+  background: rgba(38, 31, 28, 0.88);
+  color: var(--portfolio-ink);
+}
+
+.portfolio-experience .photography-portfolio__carousel-button:hover:not(:disabled) {
+  border-color: var(--portfolio-accent);
+  color: var(--portfolio-accent);
+}
+
+.portfolio-experience__console-bottom {
+  min-height: 38px;
+  padding: 0.8rem 0.2rem 0;
+  border-top: 1px solid rgba(255, 250, 245, 0.14);
+}
+
+.portfolio-experience__console-bottom > span:last-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--portfolio-muted);
+  font-size: 0.67rem;
+}
+
+.portfolio-experience__console-bottom i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--portfolio-accent);
+  box-shadow: 0 0 12px var(--portfolio-accent);
+}
+
+.portfolio-experience button:focus-visible {
+  outline: 2px solid var(--portfolio-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .portfolio-experience__card {
+    flex-basis: calc((100% - 1rem) / 2);
+  }
+
+  .portfolio-experience .photography-portfolio__image-wrap {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-experience__console {
+    padding: 0.8rem;
+    border-radius: 17px;
+  }
+
+  .portfolio-experience__brand,
+  .portfolio-experience__collection {
+    font-size: 0.49rem;
+    letter-spacing: 0.1em;
+  }
+
+  .portfolio-experience__selection {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .portfolio-experience__filters {
+    width: calc(100% + 1.6rem);
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: 0 -0.8rem;
+    padding: 0.1rem 0.8rem 0.4rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .portfolio-experience__filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .photography-portfolio .portfolio-experience__filter {
+    flex: 0 0 auto;
+  }
+
+  .portfolio-experience__card {
+    flex-basis: 100%;
+  }
+
+  .portfolio-experience .photography-portfolio__grid {
+    padding: 1rem 1rem 1.5rem;
+    scroll-padding-inline: 1rem;
+  }
+
+  .portfolio-experience .photography-portfolio__image-wrap {
+    min-height: 390px;
+  }
+
+  .portfolio-experience__console-bottom > span:first-child {
+    max-width: 46%;
+    line-height: 1.5;
+  }
+
+  .portfolio-experience__console-bottom > span:last-child {
+    max-width: 52%;
+    text-align: right;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-experience *,
+  .portfolio-experience *::before,
+  .portfolio-experience *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

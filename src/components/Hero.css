@@ -1,0 +1,276 @@
+.photography-hero {
+  --hero-ink: #332b27;
+  --hero-accent: #b66f53;
+  --hero-paper: #fffdfa;
+
+  position: relative;
+  display: flex;
+  min-height: calc(100vh - 96px);
+  min-height: calc(100svh - 96px);
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: #c7d3d1;
+  isolation: isolate;
+  color: var(--hero-ink);
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+}
+
+.photography-hero *,
+.photography-hero *::before,
+.photography-hero *::after {
+  box-sizing: border-box;
+}
+
+.photography-hero__photo,
+.photography-hero__veil {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.photography-hero__photo {
+  object-fit: cover;
+  object-position: 48% 51%;
+  animation: hero-photo-in 1.1s ease-out both;
+}
+
+.photography-hero__veil {
+  background:
+    linear-gradient(90deg, rgba(43, 39, 35, 0.02) 19%, rgba(43, 39, 35, 0.16) 43%, rgba(43, 39, 35, 0.72) 100%),
+    linear-gradient(0deg, rgba(43, 39, 35, 0.35), transparent 45%);
+}
+
+.photography-hero__content {
+  width: min(540px, 48%);
+  margin: 0 clamp(2rem, 9.5vw, 10rem) 0 auto;
+  padding: 4.5rem 0;
+  color: #fffdfa;
+  animation: hero-copy-in 700ms 120ms ease-out both;
+}
+
+.photography-hero__eyebrow {
+  margin: 0 0 1.45rem;
+  color: #f2ddd2;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.photography-hero__eyebrow span {
+  padding: 0 0.28rem;
+  color: #e8ad91;
+}
+
+.photography-hero__content h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  font-size: clamp(4.1rem, 8vw, 7.4rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.84;
+}
+
+.photography-hero__content h1 em {
+  color: #f1c5ae;
+  font-weight: 400;
+}
+
+.photography-hero__description {
+  max-width: 420px;
+  margin: 1.65rem 0 0;
+  color: rgba(255, 253, 250, 0.91);
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+.photography-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.35rem;
+  margin-top: 2rem;
+}
+
+.photography-hero__button {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 0 1.35rem;
+  background: #fffaf5;
+  color: #47372f;
+  font-size: 0.79rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  text-decoration: none;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.photography-hero__button:hover {
+  transform: translateY(-2px);
+  background: #f4dfd3;
+}
+
+.photography-hero__button span {
+  color: var(--hero-accent);
+  font-size: 1rem;
+}
+
+.photography-hero__text-link {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 253, 250, 0.6);
+  color: #fffdfa;
+  font-size: 0.77rem;
+  text-decoration: none;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.photography-hero__text-link:hover {
+  border-color: #f1c5ae;
+  color: #f1c5ae;
+}
+
+.photography-hero__location {
+  margin: 2.25rem 0 0;
+  color: rgba(255, 253, 250, 0.78);
+  font-size: 0.72rem;
+  letter-spacing: 0.055em;
+}
+
+.photography-hero__caption {
+  position: absolute;
+  right: clamp(1.25rem, 3.8vw, 3.5rem);
+  bottom: 2rem;
+  color: rgba(255, 253, 250, 0.72);
+  font-family: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  font-size: 1rem;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+@keyframes hero-copy-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-photo-in {
+  from {
+    opacity: 0.8;
+    transform: scale(1.025);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1000px) {
+  .photography-hero {
+    min-height: calc(100vh - 112px);
+    min-height: calc(100svh - 112px);
+  }
+
+  .photography-hero__content {
+    width: min(540px, 62%);
+    margin-right: clamp(2rem, 7vw, 5rem);
+  }
+
+  .photography-hero__veil {
+    background:
+      linear-gradient(90deg, rgba(43, 39, 35, 0.03) 0%, rgba(43, 39, 35, 0.28) 34%, rgba(43, 39, 35, 0.76) 100%),
+      linear-gradient(0deg, rgba(43, 39, 35, 0.38), transparent 46%);
+  }
+}
+
+@media (max-width: 600px) {
+  .photography-hero {
+    min-height: calc(100vh - 106px);
+    min-height: calc(100svh - 106px);
+  }
+
+  .photography-hero {
+    min-height: min(680px, calc(100svh - 110px));
+    align-items: flex-end;
+  }
+
+  .photography-hero__photo {
+    object-position: 43% center;
+  }
+
+  .photography-hero__veil {
+    background:
+      linear-gradient(0deg, rgba(35, 31, 29, 0.86) 0%, rgba(35, 31, 29, 0.61) 42%, rgba(35, 31, 29, 0.06) 100%),
+      linear-gradient(90deg, rgba(35, 31, 29, 0.08), transparent 65%);
+  }
+
+  .photography-hero__content {
+    width: auto;
+    margin: 0;
+    padding: 3.5rem 1.35rem 5.2rem;
+  }
+
+  .photography-hero__eyebrow {
+    max-width: 320px;
+    margin-bottom: 1rem;
+    font-size: 0.61rem;
+    letter-spacing: 0.12em;
+  }
+
+  .photography-hero__content h1 {
+    font-size: clamp(3.55rem, 16vw, 5rem);
+  }
+
+  .photography-hero__description {
+    max-width: 390px;
+    margin-top: 1.15rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .photography-hero__actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+
+  .photography-hero__button {
+    min-height: 50px;
+  }
+
+  .photography-hero__location {
+    margin-top: 1.55rem;
+    font-size: 0.67rem;
+  }
+
+  .photography-hero__caption {
+    right: 1.25rem;
+    bottom: 1.2rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photography-hero *,
+  .photography-hero *::before,
+  .photography-hero *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,650 @@
+.photography-portfolio {
+  --portfolio-ink: #382e29;
+  --portfolio-muted: #786a61;
+  --portfolio-accent: #b66f53;
+  --portfolio-paper: #fbf7f2;
+
+  padding: clamp(5rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5rem);
+  background-color: var(--portfolio-paper);
+  background-image:
+    repeating-conic-gradient(
+      from 0deg at 0% 0%,
+      #f5ece4 0deg,
+      #fff9f4 5deg
+    ),
+    repeating-conic-gradient(
+      from 0deg at 100% 100%,
+      #fff9f4 0deg,
+      #f5ece4 5deg
+    );
+  background-size: 48px 48px;
+  background-blend-mode: multiply;
+  color: var(--portfolio-ink);
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+}
+
+.photography-portfolio--dynamic,
+.photography-portfolio.portfolio-experience {
+  --portfolio-ink: #fffaf5;
+  --portfolio-muted: rgba(255, 250, 245, 0.72);
+  --portfolio-accent: #e3b49c;
+  --portfolio-paper: #241f1d;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #241f1d;
+  color: var(--portfolio-ink);
+}
+
+.photography-portfolio--dynamic::before,
+.portfolio-experience::before {
+  position: absolute;
+  z-index: -1;
+  inset: -10%;
+  background-image:
+    linear-gradient(110deg, rgba(35, 28, 25, 0.76), rgba(48, 35, 30, 0.48) 52%, rgba(35, 28, 25, 0.72)),
+    var(--portfolio-scene-image);
+  background-position: center, center 42%;
+  background-size: cover;
+  content: "";
+  filter: blur(6px);
+  opacity: 0.82;
+  transform: scale(1.08);
+  transition: opacity 350ms ease;
+}
+
+.photography-portfolio--dynamic .photography-portfolio__inner,
+.portfolio-experience .portfolio-experience__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.photography-portfolio--dynamic .photography-portfolio__filter {
+  border-color: rgba(255, 250, 245, 0.17);
+  background: rgba(255, 250, 245, 0.04);
+  color: var(--portfolio-muted);
+}
+
+.photography-portfolio--dynamic .photography-portfolio__filter:hover,
+.photography-portfolio--dynamic .photography-portfolio__filter.is-active {
+  border-color: var(--portfolio-accent);
+  background: rgba(227, 180, 156, 0.13);
+  color: var(--portfolio-ink);
+}
+
+.photography-portfolio--dynamic .photography-portfolio__filter.is-active {
+  box-shadow: inset 0 -2px var(--portfolio-accent);
+}
+
+.photography-portfolio--dynamic .photography-portfolio__carousel-button {
+  border-color: rgba(255, 250, 245, 0.2);
+  background: rgba(38, 31, 28, 0.88);
+  color: var(--portfolio-ink);
+}
+
+.photography-portfolio--dynamic .photography-portfolio__carousel-button:hover:not(:disabled) {
+  border-color: var(--portfolio-accent);
+  color: var(--portfolio-accent);
+}
+
+.photography-portfolio *,
+.photography-portfolio *::before,
+.photography-portfolio *::after {
+  box-sizing: border-box;
+}
+
+.photography-portfolio__inner {
+  width: min(1210px, 100%);
+  margin: 0 auto;
+}
+
+.photography-portfolio__intro {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.photography-portfolio__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  margin: 0 0 1rem;
+  color: var(--portfolio-accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.photography-portfolio__eyebrow span {
+  width: 28px;
+  height: 1px;
+  background: #d7b5a5;
+}
+
+.photography-portfolio__intro h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  font-size: clamp(3.4rem, 6.3vw, 5.7rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+}
+
+.photography-portfolio__intro h2 em {
+  color: var(--portfolio-accent);
+  font-weight: 400;
+}
+
+.photography-portfolio__description {
+  max-width: 590px;
+  margin: 1.35rem auto 0;
+  color: var(--portfolio-muted);
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
+.photography-portfolio__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 2.6rem 0 2.5rem;
+}
+
+.photography-portfolio__filter {
+  min-height: 40px;
+  padding: 0.55rem 1.15rem;
+  border: 1px solid #e8d9cf;
+  border-radius: 999px;
+  background: #fffdfa;
+  color: var(--portfolio-ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.photography-portfolio__filter:hover {
+  transform: translateY(-2px);
+  border-color: var(--portfolio-accent);
+  color: var(--portfolio-accent);
+}
+
+.photography-portfolio__filter.is-active {
+  border-color: var(--portfolio-accent);
+  background: var(--portfolio-accent);
+  color: #fffdfa;
+}
+
+.photography-portfolio__grid {
+  display: flex;
+  align-items: stretch;
+  gap: 1.45rem;
+  margin: 0;
+  padding: 2rem 2rem 3rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-padding-inline: 2rem;
+  scroll-snap-type: x mandatory;
+}
+
+.photography-portfolio__grid::-webkit-scrollbar {
+  display: none;
+}
+
+.photography-portfolio__grid:focus-visible {
+  outline: 2px solid var(--portfolio-accent);
+  outline-offset: 2px;
+}
+
+.photography-portfolio__carousel {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  column-gap: 0.75rem;
+  margin-bottom: -1.5rem;
+}
+
+.photography-portfolio__carousel > .photography-portfolio__carousel-button:first-child {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.photography-portfolio__carousel > .photography-portfolio__carousel-button:last-child {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.photography-portfolio__carousel > .photography-portfolio__grid {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.photography-portfolio__card-wrap {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --parallax-x: 0px;
+  --parallax-y: 0px;
+
+  flex: 0 0 calc((100% - 2.9rem) / 3);
+  min-width: 0;
+  perspective: 800px;
+  position: relative;
+  scroll-snap-align: start;
+  transform-style: preserve-3d;
+}
+
+.photography-portfolio__carousel-button {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid #e8d9cf;
+  border-radius: 50%;
+  background: #fffdfa;
+  color: var(--portfolio-ink);
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.photography-portfolio__carousel-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: var(--portfolio-accent);
+  color: var(--portfolio-accent);
+}
+
+.photography-portfolio__carousel-button:focus-visible {
+  outline: 2px solid var(--portfolio-accent);
+  outline-offset: 3px;
+}
+
+.photography-portfolio__carousel-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.photography-portfolio__carousel-button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.photography-portfolio__card {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #d8c4b7;
+  border-radius: 20px;
+  background: #333;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  box-shadow:
+    0 18px 36px rgba(65, 46, 35, 0.13),
+    0 2px 8px rgba(65, 46, 35, 0.08);
+  animation: portfolio-card-in 340ms ease both;
+  transform: rotateX(var(--tilt-y)) rotateY(var(--tilt-x));
+  transform-style: preserve-3d;
+  transition:
+    box-shadow 700ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 550ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.photography-portfolio__card::before {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border: 2px solid #fffdfa;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(75, 53, 43, 0.34);
+  content: "";
+  pointer-events: none;
+  transition: border-color 600ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.photography-portfolio__card.is-frameless {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.photography-portfolio__card-wrap.is-pointer-active .photography-portfolio__card.is-frameless,
+.photography-portfolio__card-wrap:focus-within .photography-portfolio__card.is-frameless {
+  box-shadow: none;
+}
+
+.photography-portfolio__card.is-frameless::before,
+.photography-portfolio__card-wrap.is-pointer-active .photography-portfolio__card.is-frameless::before,
+.photography-portfolio__card-wrap:focus-within .photography-portfolio__card.is-frameless::before {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.photography-portfolio__card-wrap.is-pointer-active .photography-portfolio__card,
+.photography-portfolio__card-wrap:focus-within .photography-portfolio__card {
+  transform: rotateX(var(--tilt-y)) rotateY(var(--tilt-x));
+  box-shadow:
+    0 0 30px rgba(182, 111, 83, 0.16),
+    0 24px 44px rgba(65, 46, 35, 0.22),
+    0 4px 12px rgba(65, 46, 35, 0.12);
+  transition:
+    box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 550ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.photography-portfolio__card-wrap.is-pointer-active .photography-portfolio__card::before,
+.photography-portfolio__card-wrap:focus-within .photography-portfolio__card::before {
+  border-color: #fffdfa;
+  box-shadow: inset 0 0 0 1px rgba(75, 53, 43, 0.48);
+}
+
+.photography-portfolio__image-wrap {
+  position: relative;
+  min-height: 400px;
+  aspect-ratio: 0.84;
+  margin: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  background: var(--card-matte, var(--portfolio-paper));
+}
+
+.photography-portfolio__card.is-category-card {
+  pointer-events: none;
+}
+
+.photography-portfolio__category-select {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.photography-portfolio__category-select:focus-visible {
+  outline: 2px solid var(--portfolio-accent);
+  outline-offset: 3px;
+}
+
+.photography-portfolio__image-wrap::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(35, 29, 25, 0.08) 18%,
+    rgba(35, 29, 25, 0.12) 45%,
+    rgba(35, 29, 25, 0.82) 100%
+  );
+  content: "";
+  opacity: 0.66;
+  pointer-events: none;
+  transition: opacity 600ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.photography-portfolio__card-wrap.is-pointer-active .photography-portfolio__image-wrap::after,
+.photography-portfolio__card:focus-within .photography-portfolio__image-wrap::after {
+  opacity: 1;
+}
+
+.photography-portfolio__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  transform: translate3d(var(--parallax-x), var(--parallax-y), 0) scale(1.08);
+  transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.photography-portfolio__card-wrap.is-pointer-active .photography-portfolio__image {
+  transform: translate3d(var(--parallax-x), var(--parallax-y), 0) scale(1.12);
+}
+
+.photography-portfolio__tag {
+  position: absolute;
+  z-index: 1;
+  top: 0.8rem;
+  left: 0.8rem;
+  padding: 0.43rem 0.75rem;
+  border: 1px solid rgba(255, 253, 250, 0.8);
+  border-radius: 999px;
+  background: rgba(255, 253, 250, 0.95);
+  color: var(--portfolio-accent);
+  font-size: 0.61rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.photography-portfolio__card.is-category-card .photography-portfolio__tag {
+  display: none;
+}
+
+.photography-portfolio__image-caption {
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  bottom: 1.15rem;
+  left: 1rem;
+  color: #fffdfa;
+  pointer-events: none;
+  transform: translateY(calc(100% - 2.2rem));
+  transition: transform 600ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.photography-portfolio__card-wrap.is-pointer-active .photography-portfolio__image-caption,
+.photography-portfolio__card:focus-within .photography-portfolio__image-caption {
+  transform: translateY(0);
+}
+
+.photography-portfolio__image-caption h3 {
+  margin: 0 0 0.35rem;
+  font-family: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.photography-portfolio__image-caption p {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  color: rgba(255, 253, 250, 0.9);
+  font-size: 0.68rem;
+  letter-spacing: 0.015em;
+}
+
+.photography-portfolio__image-caption .photography-portfolio__card-description {
+  display: -webkit-box;
+  margin: 0.65rem 0 0;
+  padding: 0;
+  overflow: hidden;
+  color: rgba(255, 253, 250, 0.93);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  opacity: 0;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.32);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  transition:
+    opacity 500ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateY(1rem);
+}
+
+.photography-portfolio__card-wrap.is-pointer-active .photography-portfolio__image-caption .photography-portfolio__card-description,
+.photography-portfolio__card:focus-within .photography-portfolio__image-caption .photography-portfolio__card-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.photography-portfolio__image-caption p span {
+  color: #f1c5ae;
+  font-size: 0.9rem;
+}
+
+.photography-portfolio__cta {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 2.5rem auto 0;
+  padding: 0.55rem 0 0.65rem;
+  border-bottom: 1px solid #c78b70;
+  color: var(--portfolio-ink);
+  font-size: 0.83rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 180ms ease, gap 180ms ease;
+}
+
+.photography-portfolio__cta:hover {
+  gap: 1.05rem;
+  color: var(--portfolio-accent);
+}
+
+.photography-portfolio__cta span {
+  color: var(--portfolio-accent);
+}
+
+@keyframes portfolio-card-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .photography-portfolio__grid {
+    gap: 1rem;
+  }
+
+  .photography-portfolio__card-wrap {
+    flex-basis: calc((100% - 1rem) / 2);
+  }
+
+  .photography-portfolio__image-wrap {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .photography-portfolio {
+    padding: 4.75rem 1.15rem 5.25rem;
+  }
+
+  .photography-portfolio__intro h2 {
+    font-size: clamp(3.5rem, 15vw, 4.7rem);
+  }
+
+  .photography-portfolio__description {
+    font-size: 0.88rem;
+  }
+
+  .photography-portfolio__filters {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin: 2rem -1.15rem 1.75rem;
+    padding: 0 1.15rem 0.35rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .photography-portfolio__filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .photography-portfolio__filter {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.65rem;
+  }
+
+  .photography-portfolio__grid {
+    gap: 1rem;
+    padding: 1.25rem 1.5rem 2.5rem;
+    scroll-padding-inline: 1.5rem;
+  }
+
+  .photography-portfolio__card-wrap {
+    flex-basis: 100%;
+  }
+
+  .photography-portfolio__image-wrap {
+    min-height: 420px;
+    aspect-ratio: 0.86;
+  }
+
+  .photography-portfolio__image-caption h3 {
+    font-size: 1.85rem;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .photography-portfolio__image-caption,
+  .photography-portfolio__card-description {
+    transform: none;
+  }
+
+  .photography-portfolio__image-caption {
+    bottom: 1rem;
+  }
+
+  .photography-portfolio__image-caption .photography-portfolio__card-description {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photography-portfolio *,
+  .photography-portfolio *::before,
+  .photography-portfolio *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .photography-portfolio__card,
+  .photography-portfolio__card-wrap.is-pointer-active .photography-portfolio__card {
+    transform: none;
+  }
+
+  .photography-portfolio__grid {
+    scroll-behavior: auto;
+  }
+}
