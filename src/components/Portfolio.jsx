@@ -1,7 +1,11 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import "./Portfolio.css";
 import PortfolioCard from "./PortfolioCard.jsx";
-import newbornPhoto from "../assets/portfolio-newborn.png";
+import newbornPhoto1 from "../assets/portfolio-newborn-1.jpg";
+import newbornPhoto2 from "../assets/portfolio-newborn-2.jpg";
+import newbornPhoto3 from "../assets/portfolio-newborn-3.jpg";
+import newbornPhoto4 from "../assets/portfolio-newborn-4.jpg";
+import newbornPhoto5 from "../assets/portfolio-newborn-5.jpg";
 import maternityPhoto from "../assets/portfolio-motherhood.png";
 import familyPhoto from "../assets/portfolio-family-new.jpg";
 import familyPhoto2 from "../assets/portfolio-family-2.jpg";
@@ -78,10 +82,50 @@ export const stories = [
     id: "newborn-1",
     category: "newborn",
     categoryLabel: "Newborn",
-    title: "The sweetest beginning",
-    description: "Slow, cozy sessions celebrating all the tiny details of your baby's first days.",
-    image: newbornPhoto,
-    imageAlt: "A sleeping newborn wearing a soft knit hat and round glasses",
+    title: "Purest Love",
+    description: "Nestled in a carved heart with soft blue roses, celebrating your little one's sweetest beginnings.",
+    image: newbornPhoto1,
+    imageAlt: "Sleeping newborn swaddled in soft blue resting in a white heart-shaped bowl with blue roses",
+    imagePosition: "center 45%",
+  },
+  {
+    id: "newborn-2",
+    category: "newborn",
+    categoryLabel: "Newborn",
+    title: "Dreamy Slumber",
+    description: "A delicate floral haven featuring a vintage white crib draped in lace and blooming wisteria.",
+    image: newbornPhoto2,
+    imageAlt: "Peaceful newborn sleeping in an ornate vintage white crib surrounded by cascading white flowers and greenery",
+    imagePosition: "center 40%",
+  },
+  {
+    id: "newborn-3",
+    category: "newborn",
+    categoryLabel: "Newborn",
+    title: "Curious Wonder",
+    description: "Capturing bright, inquisitive eyes and gentle innocence on a warm peach backdrop.",
+    image: newbornPhoto3,
+    imageAlt: "Awake newborn baby with big dark eyes and a floral headband resting chin on hands",
+    imagePosition: "center 45%",
+  },
+  {
+    id: "newborn-4",
+    category: "newborn",
+    categoryLabel: "Newborn",
+    title: "Blushing Joy",
+    description: "An unforgettable smile nestled inside an antique lace bucket with soft garden roses.",
+    image: newbornPhoto4,
+    imageAlt: "Smiling newborn baby resting in a vintage blush bucket draped in antique lace and pink roses",
+    imagePosition: "center 40%",
+  },
+  {
+    id: "newborn-5",
+    category: "newborn",
+    categoryLabel: "Newborn",
+    title: "Serene Stillness",
+    description: "Classic and cozy portrait wrapped in rich midnight blue, honoring every peaceful detail.",
+    image: newbornPhoto5,
+    imageAlt: "Sleeping newborn peacefully posing with chin resting on tiny hands wrapped in deep blue",
     imagePosition: "center 50%",
   },
   {
