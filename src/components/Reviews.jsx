@@ -108,7 +108,7 @@ export default function Reviews() {
   return (
     <section className="photography-reviews" id="reviews" aria-labelledby={headingId}>
       <div className="photography-reviews__inner">
-        <header className="photography-reviews__intro">
+        <header className="photography-reviews__intro reveal-on-scroll">
           <p className="photography-reviews__eyebrow">
             <span aria-hidden="true" />
             Kind words from families
@@ -127,7 +127,7 @@ export default function Reviews() {
           </p>
         </header>
 
-        <div className="photography-reviews__viewport">
+        <div className="photography-reviews__viewport reveal-on-scroll reveal-delay-1">
           <div className="photography-reviews__track">
             {reviewTrack}
             <div className="photography-reviews__group" aria-hidden="true">

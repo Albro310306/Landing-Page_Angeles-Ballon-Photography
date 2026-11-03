@@ -4,7 +4,7 @@
   --reviews-accent: #b66f53;
   --reviews-paper: #f8f3ee;
 
-  padding: clamp(5rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5rem);
+  padding: clamp(5rem, 8vw, 7.5rem) clamp(1.25rem, 5vw, 5rem);
   background:
     radial-gradient(ellipse at 50% 0, rgba(224, 200, 184, 0.25), transparent 48%),
     var(--reviews-paper);
@@ -25,7 +25,7 @@
 
 .photography-reviews__intro {
   max-width: 760px;
-  margin: 0 auto 3.25rem;
+  margin: 0 auto clamp(1.8rem, 3.5vw, 2.5rem);
   text-align: center;
 }
 
@@ -34,7 +34,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.9rem;
-  margin: 0 0 1rem;
+  margin: 0 0 0.85rem;
   color: var(--reviews-accent);
   font-size: 0.7rem;
   font-weight: 600;
@@ -97,7 +97,7 @@
   width: 100vw;
   margin-left: calc(50% - 50vw);
   overflow: hidden;
-  padding: 0.25rem 0 1.1rem;
+  padding: 1.5rem 0 2.5rem;
   mask-image: linear-gradient(
     90deg,
     transparent,
@@ -141,7 +141,7 @@
   border: 1px solid #eadbd1;
   border-radius: 18px;
   background: rgba(255, 253, 250, 0.88);
-  box-shadow: 0 12px 32px rgba(65, 46, 35, 0.06);
+  box-shadow: 0 8px 24px rgba(65, 46, 35, 0.05);
   transition:
     border-color 300ms ease,
     box-shadow 300ms ease,
@@ -150,7 +150,7 @@
 
 .photography-reviews__card:hover {
   border-color: #d9b9a7;
-  box-shadow: 0 18px 36px rgba(65, 46, 35, 0.1);
+  box-shadow: 0 14px 28px rgba(65, 46, 35, 0.08);
 }
 
 .photography-reviews__rating {
@@ -175,7 +175,7 @@
 .photography-reviews__card blockquote {
   position: relative;
   flex: 1;
-  margin: 0 0 1rem;
+  margin: 0 0 0.85rem;
   color: #5f5149;
   font-family: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
   font-size: 1.18rem;

@@ -29,7 +29,7 @@ export default function PortfolioExperience() {
       style={{ "--portfolio-scene-image": `url("${activeStory.image}")` }}
     >
       <div className="photography-portfolio__inner portfolio-experience__inner">
-        <header className="photography-portfolio__intro portfolio-experience__intro">
+        <header className="photography-portfolio__intro portfolio-experience__intro reveal-on-scroll">
           <p className="photography-portfolio__eyebrow portfolio-experience__eyebrow">
             <span aria-hidden="true" />
             The story library
@@ -45,7 +45,7 @@ export default function PortfolioExperience() {
           </p>
         </header>
 
-        <div className="portfolio-experience__console">
+        <div className="portfolio-experience__console reveal-on-scroll reveal-scale reveal-delay-1">
           <div className="portfolio-experience__console-top">
             <span className="portfolio-experience__brand">
               <span aria-hidden="true">✳</span> ANGELES BALLON

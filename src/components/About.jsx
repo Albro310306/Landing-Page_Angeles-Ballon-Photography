@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section className="photographer-about" id="about" aria-labelledby={headingId}>
       <div className="photographer-about__inner">
-        <div className="photographer-about__portrait-wrap">
+        <div className="photographer-about__portrait-wrap reveal-on-scroll reveal-slide-right">
           <img
             className="photographer-about__portrait"
             src={portrait}
@@ -20,7 +20,7 @@ export default function About() {
           </span>
         </div>
 
-        <div className="photographer-about__copy">
+        <div className="photographer-about__copy reveal-on-scroll reveal-delay-1">
           <p className="photographer-about__eyebrow">
             The person behind the camera
           </p>
@@ -46,15 +46,15 @@ export default function About() {
             hold on to this season just as it feels right now.
           </p>
           <div className="photographer-about__details" aria-label="The Angeles Ballon experience">
-            <div className="photographer-about__detail">
+            <div className="photographer-about__detail reveal-on-scroll reveal-delay-2">
               <span>01</span>
               <p>Gentle, guided sessions</p>
             </div>
-            <div className="photographer-about__detail">
+            <div className="photographer-about__detail reveal-on-scroll reveal-delay-3">
               <span>02</span>
               <p>Meaningful moments, naturally</p>
             </div>
-            <div className="photographer-about__detail">
+            <div className="photographer-about__detail reveal-on-scroll reveal-delay-4">
               <span>03</span>
               <p>Serving Gainesville &amp; Northern Virginia</p>
             </div>

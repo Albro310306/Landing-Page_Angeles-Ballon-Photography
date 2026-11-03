@@ -1,0 +1,296 @@
+.photography-faq {
+  position: relative;
+  padding: clamp(5.5rem, 8vw, 7.5rem) clamp(1.25rem, 5vw, 5rem);
+  background-color: #fbf8f5;
+  background-size: 600px;
+  background-repeat: repeat;
+  background-position: center top;
+  border-top: 1px solid rgba(223, 201, 188, 0.45);
+  border-bottom: 1px solid rgba(223, 201, 188, 0.45);
+  color: #332b27;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.photography-faq *,
+.photography-faq *::before,
+.photography-faq *::after {
+  box-sizing: border-box;
+}
+
+.photography-faq__inner {
+  width: min(100%, 960px);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Header & Intro
+   ========================================================================== */
+.photography-faq__intro {
+  text-align: center;
+  margin-bottom: clamp(1.8rem, 3.5vw, 2.5rem);
+}
+
+.photography-faq__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 0 0.85rem;
+  color: #b66f53;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.photography-faq__eyebrow span {
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+.photography-faq__intro h2 {
+  margin: 0 auto;
+  color: #27211e;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.photography-faq__intro h2 em {
+  font-style: italic;
+  color: #b66f53;
+}
+
+.photography-faq__description {
+  max-width: 620px;
+  margin: 1.25rem auto 0;
+  color: #635750;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+
+/* ==========================================================================
+   Accordion Items
+   ========================================================================== */
+.photography-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.photography-faq__item {
+  background: #ffffff;
+  border: 1px solid rgba(223, 201, 188, 0.6);
+  border-radius: 12px;
+  transition:
+    border-color 300ms ease,
+    box-shadow 300ms ease,
+    transform 300ms ease;
+  overflow: hidden;
+}
+
+.photography-faq__item:hover {
+  border-color: rgba(182, 111, 83, 0.45);
+  box-shadow: 0 10px 28px rgba(59, 43, 34, 0.04);
+}
+
+.photography-faq__item.is-open {
+  border-color: #b66f53;
+  box-shadow: 0 12px 32px rgba(182, 111, 83, 0.08);
+}
+
+.photography-faq__item h3 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+.photography-faq__trigger {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: clamp(1.15rem, 2.5vw, 1.5rem) clamp(1.2rem, 3vw, 1.8rem);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: #2b231f;
+  transition: color 200ms ease;
+}
+
+.photography-faq__trigger:hover {
+  color: #b66f53;
+}
+
+.photography-faq__number {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #b66f53;
+  letter-spacing: -0.01em;
+  opacity: 0.9;
+}
+
+.photography-faq__question-text {
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.14rem);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.photography-faq__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fdf8f4;
+  border: 1px solid rgba(223, 201, 188, 0.7);
+  color: #b66f53;
+  flex-shrink: 0;
+  transition:
+    transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 240ms ease,
+    border-color 240ms ease;
+}
+
+.photography-faq__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.photography-faq__item.is-open .photography-faq__icon {
+  transform: rotate(45deg);
+  background: #b66f53;
+  color: #ffffff;
+  border-color: #b66f53;
+}
+
+/* Panel & Height Transition */
+.photography-faq__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 360ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photography-faq__item.is-open .photography-faq__panel {
+  grid-template-rows: 1fr;
+}
+
+.photography-faq__panel-content {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.photography-faq__panel-content p {
+  margin: 0;
+  padding: 0 clamp(1.2rem, 3vw, 1.8rem) clamp(1.2rem, 2.5vw, 1.6rem);
+  padding-left: clamp(3.2rem, 6vw, 4.2rem);
+  color: #635750;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   Contact Prompt Box
+   ========================================================================== */
+.photography-faq__cta {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(1.8rem, 4vw, 2.5rem);
+  background: #ffffff;
+  border: 1px dashed rgba(182, 111, 83, 0.45);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(59, 43, 34, 0.03);
+}
+
+.photography-faq__cta-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.photography-faq__cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fcf4ee;
+  color: #b66f53;
+  font-size: 1.4rem;
+}
+
+.photography-faq__cta-text h3 {
+  margin: 0 0 0.35rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #27211e;
+  letter-spacing: -0.01em;
+}
+
+.photography-faq__cta-text p {
+  margin: 0;
+  color: #6e615a;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.photography-faq__cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.85rem 1.6rem;
+  background: #332b27;
+  color: #fffdfa;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 220ms ease,
+    transform 220ms ease;
+}
+
+.photography-faq__cta-button:hover {
+  background: #b66f53;
+  transform: translateY(-2px);
+}
+
+.photography-faq__cta-button span {
+  font-size: 0.95rem;
+  transition: transform 220ms ease;
+}
+
+.photography-faq__cta-button:hover span {
+  transform: translate(2px, -2px);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 768px) {
+  .photography-faq__cta-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.2rem;
+    justify-items: center;
+  }
+
+  .photography-faq__panel-content p {
+    padding-left: clamp(1.2rem, 3vw, 1.8rem);
+  }
+}
+

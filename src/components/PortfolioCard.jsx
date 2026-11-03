@@ -6,14 +6,22 @@ const cardMatteColors = {
   family: "#aaadc0",
   pregnancy: "#51535b",
   sitter: "#7d4548",
+  smashcake: "#7d4548",
 };
 
-export default function PortfolioCard({ story, activeFilter, onSelect, isSelected = false }) {
+export default function PortfolioCard({
+  story,
+  activeFilter,
+  onSelect,
+  onOpenLightbox,
+  onSelectPhoto,
+  isSelected = false,
+}) {
   const isCategoryCard = activeFilter === "all";
 
   return (
     <div
-      className="photography-portfolio__card-wrap"
+      className={`photography-portfolio__card-wrap${!isCategoryCard ? " photography-portfolio__card-wrap--clean" : ""}`}
       onPointerEnter={(event) => {
         if (event.pointerType !== "touch") {
           event.currentTarget.classList.add("is-pointer-active");
@@ -42,7 +50,7 @@ export default function PortfolioCard({ story, activeFilter, onSelect, isSelecte
       }}
     >
       <article
-        className={`photography-portfolio__card is-frameless${isCategoryCard ? " is-category-card" : ""}`}
+        className={`photography-portfolio__card is-frameless${isCategoryCard ? " is-category-card" : " is-photo-card"}`}
       >
         <div
           className="photography-portfolio__image-wrap"
@@ -55,13 +63,23 @@ export default function PortfolioCard({ story, activeFilter, onSelect, isSelecte
             loading="lazy"
             style={{ objectPosition: story.imagePosition }}
           />
-          <span className="photography-portfolio__tag">{story.categoryLabel}</span>
-          <div className="photography-portfolio__image-caption">
-            <h3>{isCategoryCard ? story.categoryLabel : story.title}</h3>
-            <p className="photography-portfolio__card-description">{story.description}</p>
-          </div>
+
+          {/* Only show category tag and hover caption text in "All stories" */}
+          {isCategoryCard && (
+            <>
+              <span className="photography-portfolio__tag">{story.categoryLabel}</span>
+              <div className="photography-portfolio__image-caption">
+                <h3>{story.categoryLabel}</h3>
+                <p className="photography-portfolio__card-description">{story.description}</p>
+              </div>
+            </>
+          )}
+
+
         </div>
       </article>
+
+      {/* Button for category switching in All stories */}
       {isCategoryCard && onSelect && (
         <button
           className="photography-portfolio__category-select"
@@ -69,6 +87,19 @@ export default function PortfolioCard({ story, activeFilter, onSelect, isSelecte
           aria-label={`View ${story.categoryLabel} portfolio section`}
           aria-pressed={isSelected}
           onClick={() => onSelect(story.category)}
+        />
+      )}
+
+      {/* Button for opening lightbox full-screen inside a specific category and updating portfolio background */}
+      {!isCategoryCard && onOpenLightbox && (
+        <button
+          className="photography-portfolio__lightbox-trigger"
+          type="button"
+          aria-label={`Open full size image: ${story.title || story.categoryLabel}`}
+          onClick={() => {
+            if (onSelectPhoto) onSelectPhoto(story);
+            onOpenLightbox(story);
+          }}
         />
       )}
     </div>
