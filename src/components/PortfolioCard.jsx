@@ -71,8 +71,16 @@ export default function PortfolioCard({
               <div className="photography-portfolio__image-caption">
                 <h3>{story.categoryLabel}</h3>
                 <p className="photography-portfolio__card-description">{story.description}</p>
+                {story.price && (
+                  <span className="photography-portfolio__card-price">{story.price}</span>
+                )}
               </div>
             </>
+          )}
+
+          {/* Price badge for individual photo cards (category view) */}
+          {!isCategoryCard && story.price && (
+            <span className="photography-portfolio__price-badge">{story.price}</span>
           )}
 
 

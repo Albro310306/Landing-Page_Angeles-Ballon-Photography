@@ -6,21 +6,37 @@
   --header-height: 96px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
   :root {
-    --header-height: 112px;
-  }
-}
-
-@media (max-width: 600px) {
-  :root {
-    --header-height: 106px;
+    --header-height: 68px;
   }
 }
 
 html {
   min-width: 320px;
+  max-width: 100%;
+  width: 100%;
   scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background: #fffdfa;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root,
+.photography-site {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: clip;
+  position: relative;
 }
 
 #home,
@@ -30,16 +46,6 @@ html {
 #faq,
 #contact {
   scroll-margin-top: var(--header-height);
-}
-
-body {
-  min-width: 320px;
-  min-height: 100vh;
-  margin: 0;
-  background: #fffdfa;
-  font-family: "DM Sans", "Segoe UI", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 button,
@@ -80,38 +86,28 @@ a {
   transform: none;
 }
 
-.reveal-on-scroll.is-revealed,
-.reveal-on-scroll[data-revealed="true"] {
+.reveal-on-scroll.is-revealed {
   opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0);
 }
 
-/* Stagger delay classes */
 .reveal-delay-1 {
-  transition-delay: 100ms;
+  transition-delay: 120ms;
 }
 
 .reveal-delay-2 {
-  transition-delay: 200ms;
+  transition-delay: 240ms;
 }
 
 .reveal-delay-3 {
-  transition-delay: 300ms;
+  transition-delay: 360ms;
 }
 
 .reveal-delay-4 {
-  transition-delay: 400ms;
-}
-
-.reveal-delay-5 {
-  transition-delay: 500ms;
+  transition-delay: 480ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   .reveal-on-scroll {
     opacity: 1 !important;
     transform: none !important;

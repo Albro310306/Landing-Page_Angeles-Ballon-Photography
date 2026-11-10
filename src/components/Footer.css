@@ -1,5 +1,8 @@
 .photography-footer {
   background: #211c19;
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
   color: #fffdfa;
   padding: clamp(3rem, 5vw, 4.5rem) clamp(1.25rem, 5vw, 5rem) 2rem;
   font-family: "DM Sans", "Segoe UI", sans-serif;

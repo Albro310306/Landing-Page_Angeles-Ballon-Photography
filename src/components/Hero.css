@@ -1,4 +1,7 @@
 .photography-hero {
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
   --hero-ink: #332b27;
   --hero-accent: #b66f53;
   --hero-paper: #fffdfa;
@@ -372,8 +375,8 @@
 
 @media (max-width: 680px) {
   .photography-hero {
-    min-height: calc(100vh - var(--header-height, 106px));
-    min-height: calc(100svh - var(--header-height, 106px));
+    min-height: calc(100vh - var(--header-height, 68px));
+    min-height: calc(100svh - var(--header-height, 68px));
     align-items: flex-end;
   }
 
@@ -390,7 +393,7 @@
   .photography-hero__content {
     width: 100%;
     margin: 0;
-    padding: 2.5rem 1.4rem 4.5rem;
+    padding: 2rem 1.25rem 3.5rem;
   }
 
   .photography-hero__eyebrow {
@@ -400,8 +403,9 @@
   }
 
   .photography-hero__content h1 {
-    font-size: clamp(2.8rem, 13vw, 4.2rem);
-    line-height: 1.06;
+    font-size: clamp(2.2rem, 10vw, 3.6rem);
+    line-height: 1.08;
+    word-break: break-word;
   }
 
   .photography-hero__description {

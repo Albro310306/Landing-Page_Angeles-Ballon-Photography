@@ -80,7 +80,7 @@ export default function Footer() {
             <nav className="photography-footer__links" aria-label="Footer session categories">
               <a href="#portfolio">Newborn Sessions</a>
               <a href="#portfolio">Maternity &amp; Pregnancy</a>
-              <a href="#portfolio">First Birthday Smash Cake</a>
+              <a href="#portfolio">First Birthday</a>
               <a href="#portfolio">Family &amp; Sitter Portraits</a>
               <span className="photography-footer__availability-tag">
                 <span className="photography-footer__availability-dot" />

@@ -61,7 +61,7 @@ export default function Hero() {
       <img
         className="photography-hero__photo"
         src={newbornPhoto}
-        alt="Angeles Ballon Photography - Pregnancy, Newborn, Smash Cake and Family photography in Gainesville, Virginia"
+        alt="Angeles Ballon Photography - Pregnancy, Newborn, First Birthday and Family photography in Gainesville, Virginia"
       />
       <div className="photography-hero__veil" aria-hidden="true" />
 
@@ -111,7 +111,7 @@ export default function Hero() {
         </div>
 
         <p className="photography-hero__location">
-          Pregnancy • Newborn • Smash Cake • Family
+          Pregnancy • Newborn • First Birthday • Family
         </p>
       </div>
 

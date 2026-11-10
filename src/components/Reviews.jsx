@@ -4,105 +4,87 @@ import "./Reviews.css";
 const reviews = [
   {
     quote:
-      "Angeles made our newborn session feel calm and unhurried. She captured the tiny details we never want to forget.",
-    name: "Sofia M.",
-    session: "Newborn session",
+      "It was a great experience, Angie was very professional and she guided us through the whole photo shoot.",
+    name: "Claudia O'Neill",
+    session: "Studio session",
+    initials: "CO",
+  },
+  {
+    quote:
+      "Thank you for my great pictures. Loved them all. Not only you were professional but also a lovely sweet person. You were very patient and caring. Thank you for a great time. Will hire you again for future sessions!",
+    name: "Rebeca Sarmiento",
+    session: "Client review",
+    initials: "RS",
+  },
+  {
+    quote:
+      "She did an amazing job I really like my pictures, I will be back after I have the baby thanks so much.",
+    name: "Sha",
+    session: "Maternity session",
     initials: "S",
   },
   {
     quote:
-      "Our family felt at ease from the very beginning. The photographs feel like us, only with everyone in the frame.",
-    name: "Daniela R.",
-    session: "Family session",
-    initials: "D",
+      "Very friendly and professional. Glad we chose her ❤️",
+    name: "Valentina",
+    session: "Client review",
+    initials: "V",
   },
   {
     quote:
-      "I was nervous about being in front of the camera, but Angeles made the whole afternoon feel natural and lovely.",
-    name: "Priya K.",
-    session: "Motherhood session",
-    initials: "P",
-  },
-  {
-    quote:
-      "She noticed all the little moments between poses. Those ended up being the photographs we treasure most.",
-    name: "Marisol T.",
-    session: "Maternity session",
-    initials: "M",
-  },
-  {
-    quote:
-      "Our toddler needed time to warm up, and Angeles was so patient. Nothing felt forced, and the photos are beautiful.",
-    name: "Chris B.",
-    session: "Family session",
-    initials: "C",
-  },
-  {
-    quote:
-      "The session was peaceful, thoughtful, and full of care. Our baby's gallery feels like a little love letter.",
-    name: "Alyssa W.",
+      "Very nice experience 🥰 she is sweet and kind 😍 i really recommend this place to make wonderful memories newmoms 🥰",
+    name: "Stuti Rachh",
     session: "Newborn session",
-    initials: "A",
+    initials: "SR",
   },
   {
     quote:
-      "Angeles gave us gentle direction and plenty of room to be ourselves. I will always be grateful we made these memories.",
-    name: "Lucia G.",
-    session: "Motherhood session",
-    initials: "L",
+      "Absolutely professional, sweet and friendly young woman. She does beautiful work. Highly recommend, we will use her services again.",
+    name: "Neri Jorge",
+    session: "Client review",
+    initials: "NJ",
   },
   {
     quote:
-      "From the first message to the finished gallery, everything felt personal. We felt cared for the entire time.",
-    name: "Ethan P.",
+      "I had an amazing experience, and felt like a beautiful mom to be. I have no idea what I was doing, and she was amazing. She guided me and making the photos come to life and looking beautiful.",
+    name: "Jennifer A.",
     session: "Maternity session",
-    initials: "E",
+    initials: "JA",
   },
   {
     quote:
-      "The photos brought us right back to those first sleepy days at home. Such a meaningful gift to our family.",
-    name: "Nina F.",
-    session: "Newborn session",
-    initials: "N",
-  },
-  {
-    quote:
-      "We laughed, cuddled, and just enjoyed being together. Somehow Angeles captured exactly how this season feels.",
-    name: "Javier L.",
-    session: "Family session",
-    initials: "J",
+      "I love her and her set up! She did so amazing RECOMMEND 10/10",
+    name: "Elsy & Daniel",
+    session: "Studio session",
+    initials: "ED",
   },
 ];
 
 export default function Reviews() {
   const headingId = useId();
-  const reviewTrack = (
-    <div className="photography-reviews__group">
-      {reviews.map((review, index) => (
-        <article
-          className="photography-reviews__card"
-          key={`${review.name}-${index}`}
-          aria-label={`Sample review from ${review.name}, ${review.session}`}
-        >
-          <div className="photography-reviews__rating" aria-label="5 out of 5 stars">
-            {Array.from({ length: 5 }, (_, star) => (
-              <span key={star} aria-hidden="true">★</span>
-            ))}
-          </div>
-          <p className="photography-reviews__sample-label">Sample review</p>
-          <blockquote>{review.quote}</blockquote>
-          <footer className="photography-reviews__author">
-            <span className="photography-reviews__avatar" aria-hidden="true">
-              {review.initials}
-            </span>
-            <span>
-              <span className="photography-reviews__name">{review.name}</span>
-              <span className="photography-reviews__session">{review.session}</span>
-            </span>
-          </footer>
-        </article>
-      ))}
-    </div>
+
+  const renderCard = (review, key) => (
+    <article
+      className="photography-reviews__card"
+      key={key}
+      aria-label={`Review from ${review.name}, ${review.session}`}
+    >
+      <div className="photography-reviews__rating" aria-label="5 out of 5 stars">
+        {Array.from({ length: 5 }, (_, star) => (
+          <span key={star} aria-hidden="true">★</span>
+        ))}
+      </div>
+      <blockquote>{review.quote}</blockquote>
+      <footer className="photography-reviews__author">
+        <span className="photography-reviews__avatar" aria-hidden="true">
+          {review.initials}
+        </span>
+        <span>
+          <span className="photography-reviews__name">{review.name}</span>
+          <span className="photography-reviews__session">{review.session}</span>
+        </span>
+      </footer>
+    </article>
   );
 
   return (
@@ -120,37 +102,19 @@ export default function Reviews() {
             <em>stories cherished.</em>
           </h2>
           <p className="photography-reviews__description">
-            A little glimpse of what it feels like to create something meaningful together.
-          </p>
-          <p className="photography-reviews__sample-note">
-            Preview with temporary sample reviews — replace with approved client feedback before publishing.
+            Heartfelt words from parents and families who trusted us to capture their sweetest chapters.
           </p>
         </header>
 
         <div className="photography-reviews__viewport reveal-on-scroll reveal-delay-1">
           <div className="photography-reviews__track">
-            {reviewTrack}
+            {/* First group */}
+            <div className="photography-reviews__group">
+              {reviews.map((review, index) => renderCard(review, `primary-${index}`))}
+            </div>
+            {/* Duplicated group for infinite smooth marquee */}
             <div className="photography-reviews__group" aria-hidden="true">
-              {reviews.map((review, index) => (
-                <article className="photography-reviews__card" key={`duplicate-${index}`}>
-                  <div className="photography-reviews__rating">
-                    {Array.from({ length: 5 }, (_, star) => (
-                      <span key={star} aria-hidden="true">★</span>
-                    ))}
-                  </div>
-                  <p className="photography-reviews__sample-label">Sample review</p>
-                  <blockquote>{review.quote}</blockquote>
-                  <footer className="photography-reviews__author">
-                    <span className="photography-reviews__avatar" aria-hidden="true">
-                      {review.initials}
-                    </span>
-                    <span>
-                      <span className="photography-reviews__name">{review.name}</span>
-                      <span className="photography-reviews__session">{review.session}</span>
-                    </span>
-                  </footer>
-                </article>
-              ))}
+              {reviews.map((review, index) => renderCard(review, `dup-${index}`))}
             </div>
           </div>
         </div>

@@ -179,11 +179,16 @@
 .photography-faq__panel {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 360ms cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  visibility: hidden;
+  transition:
+    grid-template-rows 360ms cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 360ms;
 }
 
 .photography-faq__item.is-open .photography-faq__panel {
   grid-template-rows: 1fr;
+  visibility: visible;
 }
 
 .photography-faq__panel-content {
@@ -294,3 +299,52 @@
   }
 }
 
+
+
+@media (max-width: 600px) {
+  .photography-faq {
+    padding: 3.5rem 1.15rem 4rem;
+  }
+
+  .photography-faq__intro h2 {
+    font-size: clamp(2.3rem, 10vw, 3.4rem);
+  }
+
+  .photography-faq__description {
+    font-size: 0.92rem;
+  }
+
+  .photography-faq__trigger {
+    gap: 0.75rem;
+    padding: 1.1rem 1rem;
+  }
+
+  .photography-faq__question {
+    font-size: 0.94rem;
+    line-height: 1.45;
+  }
+
+  .photography-faq__number {
+    font-size: 1.15rem;
+  }
+
+  .photography-faq__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .photography-faq__question-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .photography-faq__panel-content {
+    padding: 0;
+  }
+
+  .photography-faq__panel-content p {
+    padding: 0 1rem 1.25rem 1rem !important;
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+}

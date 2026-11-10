@@ -10,50 +10,50 @@ const faqContent = {
     "A calm, transparent space answering the questions families most often ask before stepping in front of our lens.",
   contactHeading: "Have a unique question or ready to plan?",
   contactText:
-    "Every family’s journey is different. Send a gentle note and I will be delighted to guide you through styling, dates, or custom requests.",
+    "Every family's journey is different. Send a gentle note and I will be delighted to guide you through styling, dates, or custom requests.",
   contactButton: "Get in touch with Angeles",
   items: [
     {
       id: "faq-1",
       question: "When is the best time to book our newborn session?",
       answer:
-        "The ideal time to reserve your newborn session is during your second or early third trimester. We pencil in your estimated due date to reserve time around your arrival window, and finalize the exact day once baby is born. Sessions are typically held between days 7 and 21, when newborns sleep peacefully and naturally settle into tender, curled positions.",
+        "The ideal time to reserve your newborn session is during your second or early third trimester (weeks 24–32). We pencil in your due date and confirm the exact day once baby arrives. Please note: newborn sessions are held between days 6 and 15 of life, when babies sleep peacefully and settle into gentle poses naturally. If your baby is older than 15 days, please reach out before booking so we can guide you.",
     },
     {
       id: "faq-2",
-      question: "Where do photography sessions take place?",
+      question: "When should I schedule my maternity session?",
       answer:
-        "Newborn and milestone sessions take place at our peaceful, natural-light studio in Gainesville, Virginia, thoughtfully prepared with cozy seating, private nursing areas, and temperature control. For maternity and family portraits, we also love shooting in scenic outdoor Northern Virginia fields during golden hour, or in the relaxed comfort of your own home.",
+        "We recommend scheduling your maternity session from 27 weeks of pregnancy onward — ideally between weeks 28 and 34, when your baby bump is beautifully defined and you still feel comfortable moving with ease. Sessions create radiant, timeless portraits celebrating this fleeting season.",
     },
     {
       id: "faq-3",
-      question: "What happens if my baby is unsettled or doesn't sleep?",
+      question: "Where do photography sessions take place?",
       answer:
-        "Please don’t worry for a single moment — babies are wonderfully unpredictable, and that is completely natural! We schedule only one newborn session per day so we never have to rush. We take all the time needed for nursing, bottle breaks, diaper changes, and soothing snuggles. We patiently follow your baby’s rhythm.",
+        "Most newborn and milestone sessions take place at our peaceful Home Studio in Gainesville, Virginia — thoughtfully prepared with natural light, comfortable seating, private nursing areas, and temperature control. For maternity and family portraits, we also love scenic outdoor locations during golden hour. In addition, newborn sessions can be held at your own home for an added travel fee.",
     },
     {
       id: "faq-4",
-      question: "Do you provide newborn wraps, outfits, and styling guidance?",
+      question: "What if my baby is fussy or won't sleep during the session?",
       answer:
-        "Yes! Our studio wardrobe offers a curated collection of organic wraps, delicate heirloom knit bonnets, and timeless neutral-toned blankets. For mothers, we provide a selection of comfortable, flattering studio dresses. Ahead of your session, you will also receive our personalized styling guide to make coordinating family outfits effortless.",
+        "Please don't worry for a single moment — babies are wonderfully unpredictable, and that is completely natural. Sessions last approximately 2 hours and follow your baby's rhythm. We pause for nursing, bottle breaks, diaper changes, and soothing snuggles whenever needed. Before your session, we also provide a preparation guide to help baby arrive calm and content.",
     },
     {
       id: "faq-5",
-      question: "Can parents and older siblings be included in the photographs?",
+      question: "Do you provide wardrobe and styling, and can family be included?",
       answer:
-        "Absolutely, yes. Tender family moments and the genuine curiosity between older siblings and their new brother or sister are often the most treasured photos in your entire gallery. Immediate family members are always welcomed and included at no extra charge.",
+        "Yes! Our studio wardrobe offers organic wraps, heirloom knit bonnets, and flattering dresses for mothers. We also provide a personalized styling guide for the entire family. Immediate family members (parents and siblings) are always welcomed and included in your portraits at no extra charge.",
     },
     {
       id: "faq-6",
       question: "When will our gallery be ready, and how are files delivered?",
       answer:
-        "Within 2 to 3 weeks following your session, you will receive an invitation to your private, password-protected online gallery. From there, you can easily download high-resolution, hand-retouched art portraits, share the gallery with grandparents and loved ones, and order fine art archival prints and albums directly.",
+        "Within 2 to 3 weeks following your session, you will receive an invitation to your private, password-protected online gallery. From there, you can download high-resolution, hand-retouched portraits, share them with loved ones, and order fine art prints and archival albums directly.",
     },
     {
       id: "faq-7",
-      question: "How would you describe your photography style? Do you pose heavily?",
+      question: "How would you describe your photography style?",
       answer:
-        "Our style is gentle, organic, and heartfelt. We prioritize soft natural light, honest emotions, and timeless compositions over stiff or unnatural poses. Our aim is to create photographs that feel like a tender breath in time — artful, honest, and cherished for generations.",
+        "Our style is delicate, artistic, and timeless. Using professional, luminous lighting and harmonious compositions, we gently guide you into natural, flattering poses that capture genuine emotion while preserving your unique essence — creating timeless portraits to be treasured for generations.",
     },
   ],
 };
@@ -87,7 +87,7 @@ export default function Faq() {
           <p className="photography-faq__description">{faqContent.subtitle}</p>
         </header>
 
-        {/* Accordion List (Container handles scroll reveal; child items stay visible) */}
+        {/* Accordion List */}
         <div
           className="photography-faq__list reveal-on-scroll reveal-delay-1"
           role="region"
