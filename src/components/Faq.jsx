@@ -29,7 +29,7 @@ const faqContent = {
       id: "faq-3",
       question: "Where do photography sessions take place?",
       answer:
-        "Most newborn and milestone sessions take place at our peaceful Home Studio in Gainesville, Virginia — thoughtfully prepared with natural light, comfortable seating, private nursing areas, and temperature control. For maternity and family portraits, we also love scenic outdoor locations during golden hour. In addition, newborn sessions can be held at your own home for an added travel fee.",
+        "Sessions take place at our cozy Home Studio in Gainesville, Virginia — a comfortable, private space carefully temperature-controlled to keep your baby warm and relaxed. For maternity and family portraits, we also offer scenic outdoor locations during golden hour. In addition, newborn sessions can be held at your own home for an added travel fee based on distance.",
     },
     {
       id: "faq-4",
@@ -39,15 +39,15 @@ const faqContent = {
     },
     {
       id: "faq-5",
-      question: "Do you provide wardrobe and styling, and can family be included?",
+      question: "Do you provide wardrobe and props, and can additional people join?",
       answer:
-        "Yes! Our studio wardrobe offers organic wraps, heirloom knit bonnets, and flattering dresses for mothers. We also provide a personalized styling guide for the entire family. Immediate family members (parents and siblings) are always welcomed and included in your portraits at no extra charge.",
+        "Yes! We offer a curated collection of gowns and fabrics exclusively for expectant mothers, and full props and wraps exclusively for newborn babies. A comprehensive wardrobe guide is sent upon booking to help you prepare your family's outfits. Additional participants beyond what your package includes may join for an additional fee of $30 each.",
     },
     {
       id: "faq-6",
-      question: "When will our gallery be ready, and how are files delivered?",
+      question: "When will our gallery be ready, and how does image selection work?",
       answer:
-        "Within 2 to 3 weeks following your session, you will receive an invitation to your private, password-protected online gallery. From there, you can download high-resolution, hand-retouched portraits, share them with loved ones, and order fine art prints and archival albums directly.",
+        "After your session, you will receive the complete gallery of proofs so your family can calmly select your favorite photos for editing. Once selected, final hand-retouched portraits are delivered within 2 to 3 weeks. If you would like a quick sneak peek ahead of time, we offer an expedited delivery of 5 edited photos ready in 1 week or less for an additional $25 fee.",
     },
     {
       id: "faq-7",
