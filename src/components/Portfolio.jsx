@@ -15,7 +15,11 @@ import pregnancyPhoto2 from "../assets/portfolio-pregnancy-2.jpg";
 import pregnancyPhoto3 from "../assets/portfolio-pregnancy-3.jpg";
 import pregnancyPhoto4 from "../assets/portfolio-pregnancy-4.jpg";
 import pregnancyPhoto5 from "../assets/portfolio-pregnancy-5.jpg";
-import smashCakePhoto from "../assets/portfolio-smashcake.jpg";
+import firstBirthdayPhoto1 from "../assets/portfolio-firstbirthday-1.png";
+import firstBirthdayPhoto2 from "../assets/portfolio-firstbirthday-2.jpg";
+import firstBirthdayPhoto3 from "../assets/portfolio-firstbirthday-3.png";
+import firstBirthdayPhoto4 from "../assets/portfolio-firstbirthday-4.png";
+import firstBirthdayPhoto5 from "../assets/portfolio-firstbirthday-5.png";
 
 const filters = [
   { label: "All stories", value: "all" },
@@ -176,15 +180,59 @@ export const stories = [
     imagePosition: "center 50%",
   },
   {
-    id: "smashcake-1",
+    id: "firstbirthday-1",
     category: "smashcake",
     categoryLabel: "First Birthday",
     price: "$420",
-    title: "First Birthday Celebration",
-    description: "Joyful milestone portraits celebrating your baby's very first birthday with smiles, balloons, and sweet cake.",
-    image: smashCakePhoto,
-    imageAlt: "A smiling baby boy sitting behind his custom first birthday smash cake surrounded by festive balloons and a rustic horse",
-    imagePosition: "center 45%",
+    title: "Sweetest One",
+    description: "Pretty in pink with balloon arches, celebrating every precious detail of turning one year old.",
+    image: firstBirthdayPhoto1,
+    imageAlt: "Baby girl in pink ruffle dress celebrating her first birthday with balloons and birthday cake",
+    imagePosition: "center 30%",
+  },
+  {
+    id: "firstbirthday-2",
+    category: "smashcake",
+    categoryLabel: "First Birthday",
+    price: "$420",
+    title: "Butterfly Dreams",
+    description: "Radiant giggles in a luminous pastel floral setting with whimsical butterfly balloons.",
+    image: firstBirthdayPhoto2,
+    imageAlt: "Smiling baby girl in pastel yellow sitting on a stool holding a teddy bear near a butterfly balloon",
+    imagePosition: "center 35%",
+  },
+  {
+    id: "firstbirthday-3",
+    category: "smashcake",
+    categoryLabel: "First Birthday",
+    price: "$420",
+    title: "Golden Blossom",
+    description: "Delicate floral headband and soft blush tones honoring this joyous milestone.",
+    image: firstBirthdayPhoto3,
+    imageAlt: "Close-up portrait of baby girl with floral headband and pink tulle dress surrounded by balloons",
+    imagePosition: "center 35%",
+  },
+  {
+    id: "firstbirthday-4",
+    category: "smashcake",
+    categoryLabel: "First Birthday",
+    price: "$420",
+    title: "Heirloom Elegance",
+    description: "Classic vintage lace styling creating artful memories to cherish for a lifetime.",
+    image: firstBirthdayPhoto4,
+    imageAlt: "Baby girl in antique lace dress sitting on rustic wooden bench with pink floral backdrop",
+    imagePosition: "center 30%",
+  },
+  {
+    id: "firstbirthday-5",
+    category: "smashcake",
+    categoryLabel: "First Birthday",
+    price: "$420",
+    title: "Little Explorer",
+    description: "Joyful safari adventure with celestial blue balloon clouds and wooden milestone letters.",
+    image: firstBirthdayPhoto5,
+    imageAlt: "Baby boy in safari outfit crawling playfully with blue and gold balloon backdrop",
+    imagePosition: "center 40%",
   },
   {
     id: "family-1",
